@@ -1,1 +1,10 @@
-
+# Module
+- Export: //module.js
+    const doSomething() = () => {
+        ....
+    };
+    export{doSomething};
+    
+- Import:  //anotherModule.js
+  import{doSomething} from "./module"; //module is file name without extension
+  doSomething
