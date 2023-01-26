@@ -13,7 +13,7 @@ For removing untrack files: git clean -f
 
 
 #UI
-For Merchant Services: npm run build-local-serve
+For run project: npm run build-local-serve
 For running the server: blue run dev
 For javascript change: blue run dev:watch
 For only css change: blue run dev:build:less 
