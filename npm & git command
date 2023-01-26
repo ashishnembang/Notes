@@ -1,0 +1,31 @@
+#Getting dependency tree
+mvn dependency:tree > tree.txt
+
+#Maven:
+Maven Clean and Install: mvn clean install -DskipTests=true
+mvn dependency:purge-local-repository -DactTransitively=false
+Clearing the dependency from cache: mvn dependency:purge-local-repository 
+
+#Git:
+For resetting last commit: git reset HEAD~
+For resetting any commit hash: git reset --hard <commit_hash>
+For removing untrack files: git clean -f
+
+
+#UI
+For Merchant Services: npm run build-local-serve
+For running the server: blue run dev
+For javascript change: blue run dev:watch
+For only css change: blue run dev:build:less 
+
+#UDF:
+Generating UDF ID: 
+java -jar udf-id-gen-1.0-jar-with-dependencies.jar 
+UDF Command:
+runTests -b chrome -r local --mockDomain localhost:3000 --customMockState CBO --recordMockServices true --shape-globalcookie disable --magic-globalcookie disable -s @UDFID0650204  
+
+
+#Unit test run command:
+- npm run unit-test  
+- lint - npm run validate-local 
+- npm run metric-lint
