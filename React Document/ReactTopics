@@ -1,0 +1,3 @@
+#spread attribute: passes two props to the component
+const props = {a: 1 , b: 2};
+const element = <Sum {...props}/>; //passing two props
