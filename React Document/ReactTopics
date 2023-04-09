@@ -1,8 +1,8 @@
-#spread attribute: passes two props to the component
+#####Spread attribute: passes two props to the component
 const props = {a: 1 , b: 2};
 const element = <Sum {...props}/>; //passing two props
 
-#STATES:
+#####STATES:
 const [houses, setHouses] = useState(houseArray;)
 
 const addHouse = () => {
@@ -16,3 +16,16 @@ const addHouse = () => {
 };
 
 <button onClick={addHouse}>
+
+#####Calling setFunctiion(State) in child components
+//app.js
+const[selectedHouse, setSelectedHouse] = useState();
+{seletedHouse ? (
+  <House house={selectedHouse}/>
+) : (
+  <HouseList selectedHouse={setSelectedHouse}/>
+)
+}
+
+.....child component HouseRow.....
+<tr onClick={() => selectHouse(house)}>
