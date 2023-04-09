@@ -29,3 +29,17 @@ const[selectedHouse, setSelectedHouse] = useState();
 
 .....child component HouseRow.....
 <tr onClick={() => selectHouse(house)}>
+
+#####Create wrapper function: to give component full control to its state
+//app.js
+const setSelectedHouseWrapper = useCallback((house) => {
+  setSelectedHouse(house);
+}, []);
+
+.....
+<HouseList selectedHouse={setSelectedHouseWrapper}/>
+
+
+
+
+
