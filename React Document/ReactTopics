@@ -1,3 +1,6 @@
+Reference:
+https://github.com/RolandGuijt/ps-react-fundamentals
+
 #####Spread attribute: passes two props to the component
 const props = {a: 1 , b: 2};
 const element = <Sum {...props}/>; //passing two props
@@ -38,6 +41,14 @@ const setSelectedHouseWrapper = useCallback((house) => {
 
 .....
 <HouseList selectedHouse={setSelectedHouseWrapper}/>
+
+
+####Custom Hook
+- Its a function can take any parameter and return thing u want
+- When state change returns from hook the component using hooks re-renders
+- Seperation of concern/ reuse the hooks
+
+
 
 
 
