@@ -48,6 +48,14 @@ const setSelectedHouseWrapper = useCallback((house) => {
 - When state change returns from hook the component using hooks re-renders
 - Seperation of concern/ reuse the hooks
 
+###Context: For global state to the all the child component
+const context = React.createContext("default value");    //declare outside of the component and need to be exported
+<context.Provider value="some value">
+  //children
+</context.Provider>
+
+.....
+const value = useContext(context);
 
 
 
