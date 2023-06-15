@@ -60,6 +60,16 @@ describe('LoginBar tests', () =>{
 });
 
 
+#Genrating Coverage Reports
+- collectCoverage(Boolean)
+- collectCoverageFrom(wildcard)
+- coverageReporters
+- coverageDirectory(where to output coverage report)
+- coveragePathIgnorePatterns(regex)
+- coverageThreshold(tests fails if the thresholds are crossed)
+
+
+
 
 
 
