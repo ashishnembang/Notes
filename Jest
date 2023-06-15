@@ -23,5 +23,44 @@ expect(app.state.roomName).toBe('room1');
 - Objects - toMatchOBject(), toHaveProperty()
 - Exception - toThrow()
 
+#Example 2:
+- Mocking axios
+- Mocking onLogin
+- Instantiating the LoginBar
+- Invoking handleLogin() method
+- Verify the results
+
+jest.mock('axios');
+describe('LoginBar tests', () =>{
+  it('Calls onLogin with proper credentials when login is clicked', async () =>{
+    //prepare test
+    const onLoginMock = jest.fn();
+    const ok = {data: {user_auth: "OK"}};
+    let post = axios.post;
+    post.mockImplementation((url, payload) => Promise.resolve(ok));
+    let loginBar = shallow(<LoginBar url='' onLogin={onLoginMock}/>).instance();
+    loginBar.setState({...loginBar.state, username:'Bob', password: 'secret'});
+    
+    //make sure all our assertion are called: imp
+    expect.assertions(6);
+    
+    //actually invoke of function we are testing
+    await loginBar.handleLogin({preventDefault: jest.fn()});
+    
+   //verify axios was called with proper params;
+   expect(post.mock.calls.length).toBe(1); //OR
+   expect(post).toHaveBeenCalledTimes(1);
+   const expectedArgs = ['/active_user', {username: 'Bob', password: 'secret'}];
+   expect(post).toHaveBeenCalledWith(...expectedArgs);
+   
+   //verify handleLogin() properly called the onLogin() callback
+   expect(onLoginMock).toHaveBeenCalledTimes(1);
+   expect(onLoginMock).toHaveBeenCalledWith('OK');
+  });
+});
+
+
+
+
 
 
