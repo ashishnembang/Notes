@@ -1,1 +1,27 @@
 ####Jest###
+#Basic Testing:
+
+#Example 1:
+let app = shallow(<App/>).instance();
+expect(app.state.roomName).toBe('room0');
+app.onRoomChange('room1');
+expect(app.state.roomName).toBe('room1');
+
+#Setting up test environment
+- beforeAll()
+- beforeEach()
+- afterAll()
+- afterEach()
+- globalSetup() - execute once, for global config object and contains async function
+- globalTeardown() - execute once, for global config object and contains async function
+
+#Basic Assertions
+- Booleans - toBe(), toBeNull(), toBeDefined(), not.toXXX()
+- Numbers - toEqual(), toBeGreaterThan()
+- Strings - toEqual(), toMatch(), toHaveLength()
+- Arrays - toContain(), arrayContaining()
+- Objects - toMatchOBject(), toHaveProperty()
+- Exception - toThrow()
+
+
+
